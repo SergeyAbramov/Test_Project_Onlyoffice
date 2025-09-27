@@ -31,3 +31,9 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+    - name: Send Telegram notification
+        if: always()   # run this even if previous steps fail
+        run: |
+          curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage \
+          -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
+          -d text="✅ Build completed on branch ${{ github.ref_name }} at commit ${{ github.sha }}"
