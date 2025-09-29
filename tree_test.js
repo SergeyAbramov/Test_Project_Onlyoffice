@@ -6,7 +6,7 @@ function drawCustomTree(branchRows, outputPath) {
     if (branchRows < 1) {
         throw new Error("Количество веток должно быть положительным целым числом > 1");
     }
-    
+
     if (typeof outputPath !== 'string') {
         throw new Error("Путь должен быть строкой");
     }
