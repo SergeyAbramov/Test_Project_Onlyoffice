@@ -57,4 +57,4 @@ function drawCustomTree(branchRows, outputPath) {
 }
 module.exports = drawCustomTree;
 // Входные данные: Колво веток, путь для сохранения данных
-drawCustomTree(12, './output/tree.txt');
+drawCustomTree(18, './output/tree.txt');
